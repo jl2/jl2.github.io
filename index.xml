@@ -31,7 +31,6 @@
           results are printed to standard out, and can be copy/pasted into an HTML document.  This is
           really useful when working in Emacs with a Slime REPL open.
         </p>
-
         <div id="gist28476230" class="gist">
           <div class="gist-file">
             <div class="gist-data">
@@ -47,71 +46,116 @@
                       </tr>
                       <tr>
                         <td id="file-make-static-gist-lisp-L2" class="blob-num js-line-number" data-line-number="2"></td>
-                        <td id="file-make-static-gist-lisp-LC2" class="blob-code blob-code-inner js-file-line">  (<span class="pl-k">let</span>* ((js-url (<span class="pl-k">if</span> (string=</td>
+                        <td id="file-make-static-gist-lisp-LC2" class="blob-code blob-code-inner js-file-line">  <span class="pl-s"><span class="pl-pds">&quot;</span>Retrieve a Gist from GitHub and format it as static CSS and HTML.<span class="pl-pds">&quot;</span></span></td>
                       </tr>
                       <tr>
                         <td id="file-make-static-gist-lisp-L3" class="blob-num js-line-number" data-line-number="3"></td>
-                        <td id="file-make-static-gist-lisp-LC3" class="blob-code blob-code-inner js-file-line">                      <span class="pl-s"><span class="pl-pds">&quot;</span>.js<span class="pl-pds">&quot;</span></span></td>
+                        <td id="file-make-static-gist-lisp-LC3" class="blob-code blob-code-inner js-file-line">  (<span class="pl-k">let</span>* ((nl-string (<span class="pl-c1">format</span> <span class="pl-c1">nil</span> <span class="pl-s"><span class="pl-pds">&quot;</span>~c<span class="pl-pds">&quot;</span></span> <span class="pl-c1">#\newline</span>))</td>
                       </tr>
                       <tr>
                         <td id="file-make-static-gist-lisp-L4" class="blob-num js-line-number" data-line-number="4"></td>
-                        <td id="file-make-static-gist-lisp-LC4" class="blob-code blob-code-inner js-file-line">                      (subseq gist-url (- (length gist-url) <span class="pl-c1">3</span>)))</td>
+                        <td id="file-make-static-gist-lisp-LC4" class="blob-code blob-code-inner js-file-line">         <span class="pl-c">;; Make sure the url has &quot;.js&quot; on the end</span></td>
                       </tr>
                       <tr>
                         <td id="file-make-static-gist-lisp-L5" class="blob-num js-line-number" data-line-number="5"></td>
-                        <td id="file-make-static-gist-lisp-LC5" class="blob-code blob-code-inner js-file-line">                     gist-url</td>
+                        <td id="file-make-static-gist-lisp-LC5" class="blob-code blob-code-inner js-file-line">         (ending (subseq gist-url (- (length gist-url) <span class="pl-c1">3</span>)))</td>
                       </tr>
                       <tr>
                         <td id="file-make-static-gist-lisp-L6" class="blob-num js-line-number" data-line-number="6"></td>
-                        <td id="file-make-static-gist-lisp-LC6" class="blob-code blob-code-inner js-file-line">                     (concatenate &#39;string gist-url <span class="pl-s"><span class="pl-pds">&quot;</span>.js<span class="pl-pds">&quot;</span></span>)))</td>
+                        <td id="file-make-static-gist-lisp-LC6" class="blob-code blob-code-inner js-file-line">         (js-url (<span class="pl-k">if</span> (string= ending <span class="pl-s"><span class="pl-pds">&quot;</span>.js<span class="pl-pds">&quot;</span></span>)</td>
                       </tr>
                       <tr>
                         <td id="file-make-static-gist-lisp-L7" class="blob-num js-line-number" data-line-number="7"></td>
-                        <td id="file-make-static-gist-lisp-LC7" class="blob-code blob-code-inner js-file-line">         (gist-data (drakma:http-request js-url)))</td>
+                        <td id="file-make-static-gist-lisp-LC7" class="blob-code blob-code-inner js-file-line">                     gist-url</td>
                       </tr>
                       <tr>
                         <td id="file-make-static-gist-lisp-L8" class="blob-num js-line-number" data-line-number="8"></td>
-                        <td id="file-make-static-gist-lisp-LC8" class="blob-code blob-code-inner js-file-line">    (with-input-from-string (strm gist-data)</td>
+                        <td id="file-make-static-gist-lisp-LC8" class="blob-code blob-code-inner js-file-line">                     (concatenate &#39;string gist-url <span class="pl-s"><span class="pl-pds">&quot;</span>.js<span class="pl-pds">&quot;</span></span>)))</td>
                       </tr>
                       <tr>
                         <td id="file-make-static-gist-lisp-L9" class="blob-num js-line-number" data-line-number="9"></td>
-                        <td id="file-make-static-gist-lisp-LC9" class="blob-code blob-code-inner js-file-line">      (<span class="pl-k">let</span>* ((css-link-html (read-line strm))</td>
+                        <td id="file-make-static-gist-lisp-LC9" class="blob-code blob-code-inner js-file-line">         <span class="pl-c">;; Fetch the embedded gist from GitHub</span></td>
                       </tr>
                       <tr>
                         <td id="file-make-static-gist-lisp-L10" class="blob-num js-line-number" data-line-number="10"></td>
-                        <td id="file-make-static-gist-lisp-LC10" class="blob-code blob-code-inner js-file-line">             (doc-part (read-line strm))</td>
+                        <td id="file-make-static-gist-lisp-LC10" class="blob-code blob-code-inner js-file-line">         (gist-data (drakma:http-request js-url)))</td>
                       </tr>
                       <tr>
                         <td id="file-make-static-gist-lisp-L11" class="blob-num js-line-number" data-line-number="11"></td>
-                        <td id="file-make-static-gist-lisp-LC11" class="blob-code blob-code-inner js-file-line">             (css-link (subseq css-link <span class="pl-c1">45</span> (- (length css-link) <span class="pl-c1">4</span>)))</td>
+                        <td id="file-make-static-gist-lisp-LC11" class="blob-code blob-code-inner js-file-line">    <span class="pl-c">;; Read the string data</span></td>
                       </tr>
                       <tr>
                         <td id="file-make-static-gist-lisp-L12" class="blob-num js-line-number" data-line-number="12"></td>
-                        <td id="file-make-static-gist-lisp-LC12" class="blob-code blob-code-inner js-file-line">             (style-sheet (drakma:http-request css-link))</td>
+                        <td id="file-make-static-gist-lisp-LC12" class="blob-code blob-code-inner js-file-line">    (with-input-from-string (strm gist-data)</td>
                       </tr>
                       <tr>
                         <td id="file-make-static-gist-lisp-L13" class="blob-num js-line-number" data-line-number="13"></td>
-                        <td id="file-make-static-gist-lisp-LC13" class="blob-code blob-code-inner js-file-line">             (html (subseq doc-part <span class="pl-c1">16</span> (- (length doc-part) <span class="pl-c1">4</span>)))</td>
+                        <td id="file-make-static-gist-lisp-LC13" class="blob-code blob-code-inner js-file-line">      (<span class="pl-k">let</span>* (</td>
                       </tr>
                       <tr>
                         <td id="file-make-static-gist-lisp-L14" class="blob-num js-line-number" data-line-number="14"></td>
-                        <td id="file-make-static-gist-lisp-LC14" class="blob-code blob-code-inner js-file-line">             (no-slash-n (cl-ppcre:regex-replace-all <span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-cce"></span>n<span class="pl-pds">&quot;</span></span> html <span class="pl-s"><span class="pl-pds">&quot;</span></span></td>
+                        <td id="file-make-static-gist-lisp-LC14" class="blob-code blob-code-inner js-file-line">             <span class="pl-c">;; Get the CSS link</span></td>
                       </tr>
                       <tr>
                         <td id="file-make-static-gist-lisp-L15" class="blob-num js-line-number" data-line-number="15"></td>
-                        <td id="file-make-static-gist-lisp-LC15" class="blob-code blob-code-inner js-file-line"><span class="pl-s"><span class="pl-pds">&quot;</span></span>))</td>
+                        <td id="file-make-static-gist-lisp-LC15" class="blob-code blob-code-inner js-file-line">             (css-html (read-line strm))</td>
                       </tr>
                       <tr>
                         <td id="file-make-static-gist-lisp-L16" class="blob-num js-line-number" data-line-number="16"></td>
-                        <td id="file-make-static-gist-lisp-LC16" class="blob-code blob-code-inner js-file-line">             (no-backslash (cl-ppcre:regex-replace-all <span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-cce"></span><span class="pl-pds">&quot;</span></span> no-slash-n <span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-pds">&quot;</span></span>)))</td>
+                        <td id="file-make-static-gist-lisp-LC16" class="blob-code blob-code-inner js-file-line">             <span class="pl-c">;; Get the document data</span></td>
                       </tr>
                       <tr>
                         <td id="file-make-static-gist-lisp-L17" class="blob-num js-line-number" data-line-number="17"></td>
-                        <td id="file-make-static-gist-lisp-LC17" class="blob-code blob-code-inner js-file-line">        (<span class="pl-c1">format</span> <span class="pl-c1">t</span> <span class="pl-s"><span class="pl-pds">&quot;</span>~a~%<span class="pl-pds">&quot;</span></span> style-sheet)</td>
+                        <td id="file-make-static-gist-lisp-LC17" class="blob-code blob-code-inner js-file-line">             (doc-part (read-line strm))</td>
                       </tr>
                       <tr>
                         <td id="file-make-static-gist-lisp-L18" class="blob-num js-line-number" data-line-number="18"></td>
-                        <td id="file-make-static-gist-lisp-LC18" class="blob-code blob-code-inner js-file-line">        (<span class="pl-c1">format</span> <span class="pl-c1">t</span> <span class="pl-s"><span class="pl-pds">&quot;</span>~a~%<span class="pl-pds">&quot;</span></span> no-backslash)))))</td>
+                        <td id="file-make-static-gist-lisp-LC18" class="blob-code blob-code-inner js-file-line">             <span class="pl-c">;; Parse out the CSS URL and fetch it</span></td>
+                      </tr>
+                      <tr>
+                        <td id="file-make-static-gist-lisp-L19" class="blob-num js-line-number" data-line-number="19"></td>
+                        <td id="file-make-static-gist-lisp-LC19" class="blob-code blob-code-inner js-file-line">             <span class="pl-c">;; 45 is the length of &quot;document.write...&quot;,</span></td>
+                      </tr>
+                      <tr>
+                        <td id="file-make-static-gist-lisp-L20" class="blob-num js-line-number" data-line-number="20"></td>
+                        <td id="file-make-static-gist-lisp-LC20" class="blob-code blob-code-inner js-file-line">             <span class="pl-c">;; 4 is the length of &quot;&quot;);&quot; on the end</span></td>
+                      </tr>
+                      <tr>
+                        <td id="file-make-static-gist-lisp-L21" class="blob-num js-line-number" data-line-number="21"></td>
+                        <td id="file-make-static-gist-lisp-LC21" class="blob-code blob-code-inner js-file-line">             (css-url (subseq css-html <span class="pl-c1">45</span> (- (length css-html) <span class="pl-c1">4</span>)))</td>
+                      </tr>
+                      <tr>
+                        <td id="file-make-static-gist-lisp-L22" class="blob-num js-line-number" data-line-number="22"></td>
+                        <td id="file-make-static-gist-lisp-LC22" class="blob-code blob-code-inner js-file-line">             (style-sheet (drakma:http-request css-url))</td>
+                      </tr>
+                      <tr>
+                        <td id="file-make-static-gist-lisp-L23" class="blob-num js-line-number" data-line-number="23"></td>
+                        <td id="file-make-static-gist-lisp-LC23" class="blob-code blob-code-inner js-file-line">             <span class="pl-c">;; Remove 
+                        and  from the html</span></td>
+                      </tr>
+                      <tr>
+                        <td id="file-make-static-gist-lisp-L24" class="blob-num js-line-number" data-line-number="24"></td>
+                        <td id="file-make-static-gist-lisp-LC24" class="blob-code blob-code-inner js-file-line">             (escaped-html (subseq doc-part <span class="pl-c1">16</span> (- (length doc-part) <span class="pl-c1">4</span>)))</td>
+                      </tr>
+                      <tr>
+                        <td id="file-make-static-gist-lisp-L25" class="blob-num js-line-number" data-line-number="25"></td>
+                        <td id="file-make-static-gist-lisp-LC25" class="blob-code blob-code-inner js-file-line">             (html-nl (cl-ppcre:regex-replace-all <span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-cce"></span>n<span class="pl-pds">&quot;</span></span> escaped-html nl-string))</td>
+                      </tr>
+                      <tr>
+                        <td id="file-make-static-gist-lisp-L26" class="blob-num js-line-number" data-line-number="26"></td>
+                        <td id="file-make-static-gist-lisp-LC26" class="blob-code blob-code-inner js-file-line">             (raw-html (cl-ppcre:regex-replace-all <span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-cce"></span><span class="pl-pds">&quot;</span></span> html-nl <span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-pds">&quot;</span></span>)))</td>
+                      </tr>
+                      <tr>
+                        <td id="file-make-static-gist-lisp-L27" class="blob-num js-line-number" data-line-number="27"></td>
+                        <td id="file-make-static-gist-lisp-LC27" class="blob-code blob-code-inner js-file-line">        <span class="pl-c">;; Print everything out</span></td>
+                      </tr>
+                      <tr>
+                        <td id="file-make-static-gist-lisp-L28" class="blob-num js-line-number" data-line-number="28"></td>
+                        <td id="file-make-static-gist-lisp-LC28" class="blob-code blob-code-inner js-file-line">        (<span class="pl-c1">format</span> <span class="pl-c1">t</span> <span class="pl-s"><span class="pl-pds">&quot;</span>~a~%<span class="pl-pds">&quot;</span></span> style-sheet)</td>
+                      </tr>
+                      <tr>
+                        <td id="file-make-static-gist-lisp-L29" class="blob-num js-line-number" data-line-number="29"></td>
+                        <td id="file-make-static-gist-lisp-LC29" class="blob-code blob-code-inner js-file-line">        (<span class="pl-c1">format</span> <span class="pl-c1">t</span> <span class="pl-s"><span class="pl-pds">&quot;</span>~a~%<span class="pl-pds">&quot;</span></span> raw-html)))))</td>
                       </tr>
                     </table>
 
@@ -123,13 +167,13 @@
 
             </div>
             <div class="gist-meta">
-              <a href="https://gist.github.com/jl2/f61b8a09e87b05d0cde9/raw/4008da0a5a806ab8c6b910b5706d2c830302e4a7/make-static-gist.lisp" style="float:right">view raw</a>
+              <a href="https://gist.github.com/jl2/f61b8a09e87b05d0cde9/raw/5eb380fdb7b4ab23ab004736f71644a955f82e3d/make-static-gist.lisp" style="float:right">view raw</a>
               <a href="https://gist.github.com/jl2/f61b8a09e87b05d0cde9#file-make-static-gist-lisp">make-static-gist.lisp</a>
               hosted with &#10084; by <a href="https://github.com">GitHub</a>
             </div>
           </div>
         </div>
-
+        
       </div>
 
     </div>
