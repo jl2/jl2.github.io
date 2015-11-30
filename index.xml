@@ -57,7 +57,99 @@
           Here is a sample usage from the REPL:
         </p>
         <p>
-        <script src="https://gist.github.com/jl2/dc14aea03b3705646757.js"></script>
+<div id="gist28475215" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-replsample-lisp" class="file">
+    
+
+  <div class="blob-wrapper data type-common-lisp">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tr>
+        <td id="file-replsample-lisp-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-replsample-lisp-LC1" class="blob-code blob-code-inner js-file-line">* (ql:quickload &#39;gpxtools)</td>
+      </tr>
+      <tr>
+        <td id="file-replsample-lisp-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-replsample-lisp-LC2" class="blob-code blob-code-inner js-file-line">   To <span class="pl-c1">load</span> <span class="pl-s"><span class="pl-pds">&quot;</span>gpxtools<span class="pl-pds">&quot;</span></span>:</td>
+      </tr>
+      <tr>
+        <td id="file-replsample-lisp-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-replsample-lisp-LC3" class="blob-code blob-code-inner js-file-line">   <span class="pl-c1">Load</span> <span class="pl-c1">1</span> ASDF system:</td>
+      </tr>
+      <tr>
+        <td id="file-replsample-lisp-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-replsample-lisp-LC4" class="blob-code blob-code-inner js-file-line">   gpxtools</td>
+      </tr>
+      <tr>
+        <td id="file-replsample-lisp-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-replsample-lisp-LC5" class="blob-code blob-code-inner js-file-line">   <span class="pl-c">; Loading &quot;gpxtools&quot;</span></td>
+      </tr>
+      <tr>
+        <td id="file-replsample-lisp-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-replsample-lisp-LC6" class="blob-code blob-code-inner js-file-line">   .....</td>
+      </tr>
+      <tr>
+        <td id="file-replsample-lisp-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-replsample-lisp-LC7" class="blob-code blob-code-inner js-file-line">   (GPXTOOLS)</td>
+      </tr>
+      <tr>
+        <td id="file-replsample-lisp-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-replsample-lisp-LC8" class="blob-code blob-code-inner js-file-line">* (defparameter <span class="pl-smi">*gpx*</span></td>
+      </tr>
+      <tr>
+        <td id="file-replsample-lisp-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-replsample-lisp-LC9" class="blob-code blob-code-inner js-file-line">    (gpxtools:read-gpx <span class="pl-s"><span class="pl-pds">&quot;</span>/Users/jeremiah/gpx_tracks/precarious_climb.gpx<span class="pl-pds">&quot;</span></span>))</td>
+      </tr>
+      <tr>
+        <td id="file-replsample-lisp-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-replsample-lisp-LC10" class="blob-code blob-code-inner js-file-line">Processing track: ACTIVE LOG</td>
+      </tr>
+      <tr>
+        <td id="file-replsample-lisp-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-replsample-lisp-LC11" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">*GPX*</span></td>
+      </tr>
+      <tr>
+        <td id="file-replsample-lisp-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-replsample-lisp-LC12" class="blob-code blob-code-inner js-file-line">* (gpxtools:summarize <span class="pl-smi">*gpx*</span>)</td>
+      </tr>
+      <tr>
+        <td id="file-replsample-lisp-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-replsample-lisp-LC13" class="blob-code blob-code-inner js-file-line">Total elevation gain: <span class="pl-c1">3567.</span>271946242661d0 feet</td>
+      </tr>
+      <tr>
+        <td id="file-replsample-lisp-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-replsample-lisp-LC14" class="blob-code blob-code-inner js-file-line">Total elevation loss: -<span class="pl-c1">3538.</span>885209324304d0 feet</td>
+      </tr>
+      <tr>
+        <td id="file-replsample-lisp-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-replsample-lisp-LC15" class="blob-code blob-code-inner js-file-line">Total elevation loss: <span class="pl-c1">6.</span>437161570619994d0 miles</td>
+      </tr>
+      <tr>
+        <td id="file-replsample-lisp-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-replsample-lisp-LC16" class="blob-code blob-code-inner js-file-line"><span class="pl-c1">NIL</span></td>
+      </tr>
+      <tr>
+        <td id="file-replsample-lisp-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-replsample-lisp-LC17" class="blob-code blob-code-inner js-file-line">* </td>
+      </tr>
+</table>
+
+  </div>
+
+  </div>
+  
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/jl2/dc14aea03b3705646757/raw/1134e95922e4f4a232bdf32511f9a19fe8d35acd/replsample.lisp" style="float:right">view raw</a>
+        <a href="https://gist.github.com/jl2/dc14aea03b3705646757#file-replsample-lisp">replsample.lisp</a>
+        hosted with &#10084; by <a href="https://github.com">GitHub</a>
+      </div>
+    </div>
+</div>
         </p>
         <p>
           So far the most challenging part of the project was the calculation of distances given
