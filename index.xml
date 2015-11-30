@@ -22,7 +22,10 @@
 
     <div class="pageBody">
       <div class="pageEntry">
-        <h4 class="section_header">November 29, 2015 - New Github Pages Site</h4>
+        <div class="section_header">
+          <span class="date">November 29, 2015</span>
+          <span class="title">New Github Pages Site</span>
+        </div>
         <p>
           I haven't really done anything with my GitHub pages site, except setup Octopress and publish one blog post.
           Every time I've wanted to add a new entry I've got distracted fucking with Octopress and Ruby and Jekyll
@@ -38,7 +41,10 @@
     </div>
     <div class="pageBody">
       <div class="pageEntry">
-        <h4 class="section_header">November 12, 2014 - GPX Library</h4>
+        <div class="section_header">
+          <span class="title">GPX Library</span>
+          <span class="date">November 12, 2014</span>
+        </div>
         <p>
           I recently wrote a small library, called <a href="https://github.com/jl2/gpxtools">gpxtools</a>,
           for processing <a href="https://en.wikipedia.org/wiki/GPS_Exchange_Format">GPX</a> track files in
@@ -50,8 +56,9 @@
         <p>
           Here is a sample usage from the REPL:
         </p>
+        <p>
         <script src="https://gist.github.com/jl2/dc14aea03b3705646757.js"></script>
-
+        </p>
         <p>
           So far the most challenging part of the project was the calculation of distances given
           points in latitude and longitude.  Doing so requires converting the coordinates to the

@@ -1,6 +1,5 @@
 *
 {
-    /* font-size: 12pt; */
     font-family: serif;
 }
 
@@ -10,32 +9,16 @@ body {
 
 
 a,
-a:visited {
-    color: #0000aa;
-    text-decoration: underline;
-}
-
-a:visited {
-    color: #aa0000;
-}
-
-a:hover,
-a:active {
-    color: #00aa00;
-}
-
 a.imageLink,
 a:visited.imageLink,
 a:hover.imageLink,
-a:active.imageLink {
-    text-decoration: none;
-}
-
-
+a:active.imageLink,
 a.linkPageLink,
 a:visited.linkPageLink,
 a:hover.linkPageLink,
-a:active.linkPageLink {
+a:active.linkPageLink,
+a:visited {
+    color: #0000aa;
     text-decoration: none;
 }
 
@@ -43,29 +26,38 @@ a:active.linkPageLink {
     display: inline;
     float: right;
     width: 12em;
-    margin: 1% 1% 1% 1%;
-    background: #e0e0e0;
-    text-align: right;
+    margin: 1em;
+    background: #b0b0b0;
+    text-align: left;
 }
 
 .navigation a,
 .navigation a:visited {
-    color: #0000aa;
+    color: black;
+    font: Monospace;
+    font-weight: bold;
     text-decoration: underline;
 }
 
+a:hover,
+a:active,
 .navigation a:hover,
 .navigation a:active {
     color: #00aa00;
-    text-decoration: underline;
 }
 
 .navItem
 {
-    background: #e0e0e0;
     display: block;
-    margin: 1%;
-    text-indent: 2%;  
+    margin: 1em;
+}
+
+.pageBody {
+    display: block;
+    margin-left: 11em;
+    margin-top: 2em;
+    width: calc(75%-22em);
+    margin-right: 22em;
 }
 
 .pageEntry {
@@ -75,28 +67,30 @@ a:active.linkPageLink {
     text-align: left;
     padding: 2.5em;
     padding-top: 1.0em;
-    /* padding-left: 0.75em; */
-}
-
-.pageBody {
-    display: block;
-    /* font-size: 14pt; */
-    margin-left: 11em;
-    width: calc(75%-22em);
-    margin-right: 340px;
 }
 
 .section_header {
-    padding-left: 0.75em;
     font-family: monospace;
     font-weight: bold;
     font-size: 14pt;
+    width: 100%;
+}
+
+.title {
+    font-family: inherit;
+    font-weight: inherit;
+    align: left;
+}
+
+.date {
+    font-family: inherit;
+    font-weight: inherit;
+    float: right;
 }
 
 .screenshotThumb {
     float: right;
-    margin: 1%;
+    margin: 1em;
     margin-top: -3em;
 }
-
 
