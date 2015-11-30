@@ -54,10 +54,10 @@ a:active,
 
 .pageBody {
     display: block;
-    margin-left: 11em;
+    margin-left: 8em;
     margin-top: 2em;
-    width: calc(75%-22em);
-    margin-right: 22em;
+    width: calc(85%-16em);
+    margin-right: 16em;
 }
 
 .pageEntry {
