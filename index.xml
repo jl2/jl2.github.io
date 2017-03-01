@@ -19,7 +19,88 @@
       <div class="navItem"><a href="https://soundcloud.com/jlarocco">SoundCloud</a></div>
       <div class="navItem"><a href="http://www.flickr.com/photos/jl_2">Flickr</a></div>
     </div>
+    <!-- <div class="pageBody"> -->
+    <!--   <div class="pageEntry"> -->
+    <!--     <div class="section_header"> -->
+    <!--       <span class="date"></span> -->
+    <!--       <span class="title"></span> -->
+    <!--     </div> -->
+    <!--     <p> -->
+          
+    <!--     </p> -->
+    <!--   </div> -->
+    <!-- </div> -->
+    <div class="pageBody">
+      <div class="pageEntry">
+        <div class="section_header">
+          <span class="date">February 27, 2017</span>
+          <span class="title">Dots And Boxes in Common Lisp</span>
+        </div>
+        <p>
+          This is a short walk through showing how I went about implementing a <a href="https://en.wikipedia.org/wiki/Dots_and_Boxes">Dots and Boxes</a> game in Common Lisp.
+        </p>
+        <p>
+          Dots and Boxes is a two player game using a square grid of dots.  The players take turns connecting the dots using horizontal and vertical lines.  When a player connects the 4th edge of a 1x1 square they earn a point and take another turn.  The game ends when there are no more horizontal or vertical edges to connect.  The winner is the player with the most points.
+        </p>
+        <p>
+          First I created an empty skeleton project using Quickproject:
+        </p>
 
+        <div id="gist45289039" class="gist">
+          <div class="gist-file">
+            <div class="gist-data">
+              <div class="js-gist-file-update-container js-task-list-container file-box">
+                <div id="file-step_one-lisp" class="file">
+                  <div class="blob-wrapper data type-common-lisp">
+                    <table class="highlight tab-size js-file-line-container" data-tab-size="4">
+                      <tr>
+                        <td id="file-step_one-lisp-L1" class="blob-num js-line-number" data-line-number="1"></td>
+                        <td id="file-step_one-lisp-LC1" class="blob-code blob-code-inner js-file-line">(ql:quickload :quickproject)</td>
+                      </tr>
+                      <tr>
+                        <td id="file-step_one-lisp-L2" class="blob-num js-line-number" data-line-number="2"></td>
+                        <td id="file-step_one-lisp-LC2" class="blob-code blob-code-inner js-file-line">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td id="file-step_one-lisp-L3" class="blob-num js-line-number" data-line-number="3"></td>
+                        <td id="file-step_one-lisp-LC3" class="blob-code blob-code-inner js-file-line">(quickproject:make-project <span class="pl-s"><span class="pl-pds">&quot;</span>~/src/lisp/dots-and-boxes/<span class="pl-pds">&quot;</span></span> :depends-on &#39;(:qtools :qtgui :qtcore))</td>
+                      </tr>
+                      <tr>
+                        <td id="file-step_one-lisp-L4" class="blob-num js-line-number" data-line-number="4"></td>
+                        <td id="file-step_one-lisp-LC4" class="blob-code blob-code-inner js-file-line">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td id="file-step_one-lisp-L5" class="blob-num js-line-number" data-line-number="5"></td>
+                        <td id="file-step_one-lisp-LC5" class="blob-code blob-code-inner js-file-line">(ql:quickload :dots-<span class="pl-k">and</span>-boxes)</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="gist-meta">
+              <a href="https://gist.github.com/jl2/77608eb89525c7fd68c8e735edf2fd33/raw/514de0736dd6b91deff8106a6d63353e0cc40240/step_one.lisp" style="float:right">view raw</a>
+              <a href="https://gist.github.com/jl2/77608eb89525c7fd68c8e735edf2fd33#file-step_one-lisp">step_one.lisp</a>
+              hosted with &#10084; by <a href="https://github.com">GitHub</a>
+            </div>
+          </div>
+        </div>
+        <p>
+          The first thing to do is come up with a data structure for representing the game state.  Coming up with a good data structure can be tricky, but one good way to do it is to to think about it helps to think about how the structure will be used as the game is played and what operations will be required.  For Dots and Boxes 
+        </p>
+        <p>
+          Development will be split up into roughly three parts.  First, I'll create the underlying data structures that the game will use and implement some low level functions for working with the data and manipulating the game state.  Next, I'll create a GUI for the user to interact with the game.  Finally, I'll implement the computer's game play.
+        </p>
+        <p>
+          The first thing to do is come up with a data structure that represents the state of the game as it's being played.  For Dots and Boxes the game consists of a square pattern of dots
+        </p>
+        <p>
+          o
+        </p>
+      </div>
+    </div>
     <div class="pageBody">
       <div class="pageEntry">
         <div class="section_header">
@@ -36,10 +117,8 @@
             <div class="gist-data">
               <div class="js-gist-file-update-container js-task-list-container file-box">
                 <div id="file-make-static-gist-lisp" class="file">
-                  
-
                   <div class="blob-wrapper data type-common-lisp">
-                    <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+                    <table class="highlight tab-size js-file-line-container" data-tab-size="4">
                       <tr>
                         <td id="file-make-static-gist-lisp-L1" class="blob-num js-line-number" data-line-number="1"></td>
                         <td id="file-make-static-gist-lisp-LC1" class="blob-code blob-code-inner js-file-line">(<span class="pl-k">defun</span> <span class="pl-en">make-static-gist</span> (gist-url) </td>
@@ -223,7 +302,7 @@
                   
 
                   <div class="blob-wrapper data type-common-lisp">
-                    <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+                    <table class="highlight tab-size js-file-line-container" data-tab-size="4">
                       <tr>
                         <td id="file-replsample-lisp-L1" class="blob-num js-line-number" data-line-number="1"></td>
                         <td id="file-replsample-lisp-LC1" class="blob-code blob-code-inner js-file-line">* (ql:quickload &#39;gpxtools)</td>
