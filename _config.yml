@@ -1,0 +1,31 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            Jl2's Code Blog
+tagline:          'Common Lisp and Other Stuff'
+description:      "This is where I infrequently write about coding projects that I'm working on, and occassionally other things."
+url:              https://jl2.github.io
+baseurl:          /
+
+author:
+  name:           'Jeremiah LaRocco'
+  url:            https://jl2.github.io
+
+paginate:         5
+
+# Custom vars
+version:          2.1.0
+
+github:
+  repo:           https://github.com/jl2/jl2.github.io
+
+
+gems: [jekyll-paginate]
+paginate: 10
+paginate_path: "page:num"
+
