@@ -4,7 +4,7 @@ It doesn't have many features yet, but right now it can read a GPX file and comp
 
 Here is a sample usage from the REPL:
 
-``` common lisp
+``` common-lisp
 * (ql:quickload 'gpxtools)
    To load "gpxtools":
    Load 1 ASDF system:

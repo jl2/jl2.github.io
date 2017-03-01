@@ -1,6 +1,6 @@
 Here's a Common Lisp function to generate static HTML and CSS from a GitHub Gist URL.  The results are printed to standard out, and can be copy/pasted into an HTML document.  This is really useful when working in Emacs with a Slime REPL open.
 
-``` common lisp
+``` common-lisp
 (defun make-static-gist (gist-url) 
   "Retrieve a Gist from GitHub and format it as static CSS and HTML."
   (let* ((nl-string (format nil "~c" #\newline))
