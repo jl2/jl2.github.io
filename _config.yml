@@ -16,7 +16,7 @@ author:
   name:           'Jeremiah LaRocco'
   url:            https://jl2.github.io
 
-paginate:         5
+paginate:         10
 
 # Custom vars
 version:          2.1.0
@@ -26,6 +26,5 @@ github:
 
 
 gems: [jekyll-paginate]
-paginate: 10
 paginate_path: "page:num"
 
