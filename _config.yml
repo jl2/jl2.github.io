@@ -25,6 +25,6 @@ github:
   repo:           https://github.com/jl2/jl2.github.io
 
 
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 paginate_path: "page:num"
 
