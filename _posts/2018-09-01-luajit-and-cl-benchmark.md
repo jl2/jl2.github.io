@@ -35,14 +35,14 @@ $>
 
 ## Programs
 
-For the LuaJIT program I'm using the fastest Lua code from the benchmark site with no changes.
+For the LuaJIT program I'm using the fastest Lua code from the benchmark site with no changes.  The code can be found [here](https://gist.github.com/jl2/6e42e3c91c0ec87a1a0537c7b2827d96#file-mandelbrot-lua).
 
 The fastest Lisp code uses SBCL's assembly intrinsics, so I used the second fastest program.  I modified it to take a
-thread count argument and also tweaked the build flags to create an executable instead of a core.
+thread count argument and also tweaked the build flags to create an executable instead of a core.  The code can be found [here](https://gist.github.com/jl2/6e42e3c91c0ec87a1a0537c7b2827d96#file-mandelbrot-lisp).
 
 ## Test Procedure
 
-I created two shell scripts (run_lua.sh and run_lisp.sh) to run the benchmark.  Images of size 10000 and 20000 were
+I created two shell scripts ([run_lua.sh](https://gist.github.com/jl2/6e42e3c91c0ec87a1a0537c7b2827d96#file-run_lua-sh) and [run_lisp.sh](https://gist.github.com/jl2/6e42e3c91c0ec87a1a0537c7b2827d96#file-run_lisp-sh)) to run the benchmark.  Images of size 10000 and 20000 were
 generated using 4 and 8 threads, and each run was repeated 8 times.
 
 | # Runs |  Size | Threads |
