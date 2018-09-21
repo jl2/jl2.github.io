@@ -1,3 +1,7 @@
+---
+layout: post
+published: false
+---
 This is a short walk through showing how I implemented a [Dots and Boxes](https://en.wikipedia.org/wiki/Dots_and_Boxes) game in Common Lisp.
 
 Dots and Boxes is a two player game using a square grid of dots.  The players take turns connecting the dots using horizontal and vertical lines.  When a player connects the 4th edge of a 1x1 square they earn a point and take another turn.  The game ends when there are no more horizontal or vertical edges to connect.  The winner is the player with the most points.
@@ -5,9 +9,7 @@ Dots and Boxes is a two player game using a square grid of dots.  The players ta
 First, lets flush out a few more details.  In this implementation, a single player will play against the computer.  The human player will go first by clicking the mouse between two dots.  As the player moves the mouse around the screen to potential positions a highlighed blue line will appear, and when they click in a valid position the line will turn green and stay there.  The score will be updated, and if the player has scored a point then it will remain their turn, and if not it will become the computer's turn.  The computer will determine the best line to place and do so.  Again, the score will be updated, and if the computer has scored any points it will take another turn.  When the player completes a box it will turn green, and when the computer fills a box it will turn red.
 
 
-Now it's time to 
-
-First I created an empty skeleton project from the REPL, using Quickproject:
+Now it's time to create a new project using Quickproject:
 
 ``` common-lisp
 
@@ -16,7 +18,7 @@ First I created an empty skeleton project from the REPL, using Quickproject:
 (ql:quickload :dots-and-boxes)
 ```
 
-Then I cheated a bit, and copied 
+Next I cheated a bit and copy/pasted a minimal Qt application into my dots-and-boxes.lisp file:
 
 ``` common-lisp
 ;;;; dots-and-boxes.lisp
@@ -27,23 +29,6 @@ Then I cheated a bit, and copied
 
 (named-readtables:in-readtable :qtools)
 
-(declaim (optimize (speed 3) (safety 3) (size 0) (debug 3)))
-
-(defstruct square 
-  (owner nil)
-  (corners nil))
-
-(defstruct dots-and-boxes
-  (game-size 2)
-  (game-array (make-array (make-array 0 :element-type t :adjustable t :fill-pointer 0)))
-  (squares nil))
-
-(defun create-dots-and-boxes (size)
-  (make-dots-and-boxes :game-size size
-                            :game-array (make-array (* (1+ size) (1+ size)))))
-
-
-                            
 (define-widget main-window (QMainWindow)
   ())
 
@@ -64,7 +49,7 @@ Then I cheated a bit, and copied
 
 
 (define-widget dab-drawer (QWidget)
-  ((dab-game :initform (create-dots-and-boxes 4)))
+  ()
   (:documentation "Dots and boxes ."))
 
 (define-override (dab-drawer paint-event paint) (ev)
@@ -100,6 +85,16 @@ Then I cheated a bit, and copied
   "Create the main window."
   (with-main-window (window (make-instance 'main-window))))
 ```
+
+And then I exported the main function:
+
+``` common-lisp
+(defpackage #:dots-and-boxes
+  (:use #:cl+qt)
+  (:export #:main))
+```
+
+
 
 The first thing to do is come up with a data structure for representing the game state.  Coming up with a good data structure can be tricky, but one good way to do it is to to think about it helps to think about how the structure will be used as the game is played and what operations will be required.  For Dots and Boxes 
 
