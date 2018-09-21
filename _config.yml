@@ -10,7 +10,7 @@ title:            Jl2's Code Blog
 tagline:          'Common Lisp and Other Stuff'
 description:      "This is where I infrequently write about coding projects that I'm working on, and occassionally other things."
 url:              https://jl2.github.io
-baseurl:          /
+baseurl:          /jl2
 
 author:
   name:           'Jeremiah LaRocco'
