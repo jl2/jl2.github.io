@@ -3,16 +3,15 @@ layout: page
 title: About
 ---
 
-This is my blog about coding.
+## My Other Stuff
 
-## Other Stuff
-
-[Github](http://github.com/jl2)
+[Github](https://github.com/jl2)
+[SourceHut](https://git.sr.ht/~jl2/)
 [Photography](http://www.laroccophoto.com)
-[500px](https://500px.com/jlarocco)
 [Pinboard](https://pinboard.in/u:jlarocco/)
 [Vimeo](https://vimeo.com/user5403988)
 [SoundCloud](https://soundcloud.com/jlarocco)
 [Flickr](http://www.flickr.com/photos/jl_2)
+[500px](https://500px.com/jlarocco)
 
 Thanks for reading!

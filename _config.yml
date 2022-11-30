@@ -6,14 +6,14 @@ highlighter:      pygments
 permalink:        pretty
 
 # Setup
-title:            Jl2's Code Blog
+title:            Jeremiah's Code Site
 tagline:          'Common Lisp and Other Stuff'
-description:      "This is where I infrequently write about coding projects that I'm working on, and occassionally other things."
+description:      ""
 url:              https://jl2.github.io
 baseurl:          https://jl2.github.io/
 
 author:
-  name:           'Jeremiah LaRocco'
+  name:           'Jeremiah'
   url:            https://jl2.github.io
 
 paginate:         10
