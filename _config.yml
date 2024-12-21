@@ -1,5 +1,5 @@
 # Dependencies
-markdown:         redcarpet
+markdown:         kramdown
 highlighter:      pygments
 
 # Permalinks
@@ -7,14 +7,14 @@ permalink:        pretty
 
 # Setup
 title:            Jeremiah's Code Site
-tagline:          'Common Lisp and Other Stuff'
+tagline:          'Biking, Coding, and Other Stuff'
 description:      ""
 url:              https://jl2.github.io
 baseurl:          https://jl2.github.io/
 
 author:
   name:           'Jeremiah'
-  url:            https://jl2.github.io
+  url:            https://jlarocco.com
 
 paginate:         10
 
